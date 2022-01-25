@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 추가 페이지 (관리자용)</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- css 링크 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .tit { width:10%; margin:200px auto 50px; }
+        .pr_wrap { width:100%; height:500px; margin:0 auto; }
+        table { width:500px; height:300px; margin:0 auto; }
+        .in_btn3 { width:80px; margin:70px auto; display:block; background-color:#adb1ba; color:#333; 
+            text-align:center; border:0; outline:0; line-height:38px; }
+	    .in_btn3:hover { background-color:rgb(228, 208, 119); }
+        [class*="li_"] { float:left; }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <div class="wrap">
+        <header class="hd">
+            <h1 class="logo"><a href="index.html"><img src="img/typea-logo.png"></a></h1>
+            <div class="hd_wrap">
+                <nav class="tnb">
+                    <ul class="right">
+                        <li><a href="admin.html">관리자 메인 페이지</a></li>
+                        <li><a href="index.html">로그아웃</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 메뉴 -->
+            <div class="hd_wrap">
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="" class="menu">PRODUCT</a>
+                            <ul class="sub">
+                                <li><a href="product_2020.html">2020</a></li>
+                                <li><a href="product_2021.html">2021</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">COMMUNICATION</a>
+                            <ul class="sub">
+                                <li><a href="board.html">회원게시판</a></li>
+                                <li><a href="error.html">건의게시판</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">ABOUT US</a>
+                            <ul class="sub">
+                                <li><a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%ED%98%84%EB%8C%80%EC%98%A4%ED%86%A0%EC%97%90%EB%B2%84" target="blank">뉴스</a></li>
+                                <li><a href="company.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- 본문 -->
+        <h2 class="tit">제품 추가</h2>
+        <div class="pr_wrap">
+            <form action="" class="frm" method="post" name="pform" onsubmit="return pCheck(this)">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class="item_name">
+                                <label for="p_id">번호</label>
+                            </th>
+                            <td class="item_val">
+                                <input type="text" name="p_id" id="p_id" class="in_data" value="" readonly />
+                                <input type="button" value="제품코드 체크" class="in_btn" onclick="codeCheck()" />
+                                <input type="hidden" value="" name="codeck" id="codeck" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="item_name">
+                                <label for="p_name">제품명</label>
+                            </th>
+                            <td class="item_val">
+                                <input type="text" name="p_name" id="p_name" class="in_data" value=""  required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="item_name">
+                                <label for="p_price">분류</label>
+                            </th>
+                            <td class="item_val">
+                                <input type="text" name="p_description" id="p_description" class="in_data" value=""  required />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="item_name">
+                                <label for="p_cnt">지원기기</label>
+                            </th>
+                            <td class="item_val">
+                                <input type="text" name="p_standard" id="p_standard" class="in_data" value=""   required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="item_name">
+                                <label for="p_cnt">가격</label>
+                            </th>
+                            <td class="item_val">
+                                <input type="number" name="p_price" id="p_price" class="in_data" value=""   required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="item_name">
+                                <label for="p_img">이미지</label>
+                            </th>
+                            <td class="item_val">
+                                <input type="text" name="p_img" id="p_img" class="in_data" value=""/>
+                                <input type="button" value="이미지 업로드 체크" class="in_btn" onclick="imgCheck()" />
+                                <input type="hidden" value="" name="imgck" id="imgck" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <td><input type="button" value="제품 추가" class="in_btn3" onclick="location.href='admin_product.html'" /></td>
+        </div>
+        <!-- 푸터 영역 -->
+        <footer>
+            <div class="box">
+                <div class="li_tel">
+                    <h3>Tel. 02-6296-6000</h3>
+                </div>
+                <div class="li_ft">
+                    <ul>
+                        <li><a class="admin_link" href="admin_login.html">관리자 페이지</a></li>
+                        <li>|</li>
+                        <li><a class="sitemap" href="sitemap.html">사이트맵</a></li>
+                        <li>|</li>
+                        <li><a class="stock" href="https://finance.naver.com/item/main.nhn?code=307950" target="_blank">주식정보</a></li>
+                        <li>|</li>
+                        <li><a class="personal" href="personal.html">개인정보처리방칙</a></li>
+                    </ul>
+                    <p>
+                        COPYRIGHT 2021<br>
+                        HYUNDAI AUTOEVER CORP.<br>
+                        ALL RIGHTS RESERVED.
+                    </p>
+                </div>
+                <div class="li_sns">
+                    <a href="https://blog.naver.com/hyundai-autoever" class="btn blog" title="현대오토에버 공식 블로그 새창열기" target="_blank">
+                        <img src="img/ico-sns-blog-white-m.png">
+                    </a>
+                    <a href="https://www.facebook.com/hyundaiautoever.official/" class="btn facebook" title="현대오토에버 페이스북 새창열기" target="_blank">
+                        <img src="img/ico-sns-facebook-white-m.png">
+                    </a>
+                    <a href="https://www.linkedin.com/company/hyundai-autoever/" class="btn linkedin" title="현대오토에버 링크드인 새창열기" target="_blank">
+                        <img src="img/ico-sns-linkedin-white-m.png">
+                    </a>
+                </div>
+            </div> 
+        </footer>  
+    </div>
+    
+</body>
+</html>

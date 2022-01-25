@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/* 헤더 스타일 */
+.hd { width:100%; background:rgba(255, 255, 255,0.8); height:120px; top:0; left:0; z-index:999; }
+.hd_wrap { clear:both; width:1000px; margin:0 auto; }  
+.tnb { width:1300px; margin-top:20px; }
+.tnb .right { float:right; }
+.tnb li { float:left; margin-top:20px; }
+.tnb .right li { margin-left: 20px; }
+.tnb li a { color:rgb(19, 19, 56); font-size:16px; font-weight:bold; }
+.logo { display:block; position:absolute; top:30px; left:5%; }
+
+ /* 메뉴 스타일*/
+ .gnb { clear:both; width: 100%; padding-left:200px; }
+ .gnb ul li a { color:rgb(19, 19, 56); font-size:20px; font-weight:bold; }
+ .gnb > ul:before { content:""; display:block; background-color:rgba(19, 19, 56, 0.8); 
+     width: 100vw; height: 175px; position:absolute; z-index:998; left: 0; top:160px; 
+     visibility:hidden; opacity:0; transition:0.5s; }
+ .gnb:hover > ul:before { visibility: visible; opacity:1; }
+ .gnb > ul > li { float:left; margin-top: 56px; width: 20%; position:relative; }
+ .gnb li a.menu { display:block; height: 42px; line-height: 42px; color:rgb(19, 19, 56);
+     text-align:center; background-color:white; }
+ .gnb li:hover a.menu { background-color:rgb(19, 19, 56); color:white; }
+ .gnb li .sub { visibility:hidden; opacity:0; transition:0.5s; 
+     position:absolute; z-index:9999; width: 200px; }
+ .gnb:hover li .sub { visibility: visible; opacity:1; }
+ .gnb .sub li { clear:both; height: 40px; line-height: 40px; }
+ .gnb .sub li a { display:block; height: 40px; line-height: 40px; color:white; padding-left:50px; }
+ .gnb .sub li:hover a { color:rgb(109, 155, 224); }
+
+/* 푸터 스타일 */
+footer { color:white; background-color:rgb(19, 19, 56); padding-bottom:80px; }
+.box div { padding:60px 0 0 20px; }
+.box div:first-child h3 { margin:40px; width:200px; }
+.box div:nth-child(2) li { display:inline-block; margin-right:40px; }
+.box div:nth-child(2) p { margin-top:50px; line-height:150%; }
+.box div:last-child { padding-top:30px;}
+.li_ft { width:1200px; color:white; text-align:center; }
+.li_sns a { margin:10px; }
+footer::after { content:""; clear:both; display:block; }

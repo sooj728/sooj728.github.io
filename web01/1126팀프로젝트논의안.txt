@@ -1,0 +1,35 @@
+index 만들기
+: jsp로 만들기
+updateMember.jsp
+emailCheckPro.jsp
+emailCheckForm.jsp
+notice2020 2021 jsp
+
+find id pw id rs pw rs
+memberList.jsp
+detailMember.jsp 에 체크박스를 하나 추가하여 삭제하는 방식으로 만든다.
+board.jsp
+updateNotice.jsp
+noticeImgCheckForm noticeImgCheckPro .jsp
+board.jsp 에서 이미지 1번을 누르면 no라는 칼럼명의 값이 1로써 전달 되어야 한다.
+updateNoticePro 1,2,3으로 만들기
+join.jsp
+withdrawalCheckForm.jsp 정말 회원탈퇴 하시겠습니까? [예][아니오]
+withdrawalMember.jsp 를 백엔드가 만들고 done페이지로 보내기
+
+--게시판 관련 정보--
+board_write.jsp에서 글을 작성하면 백엔드에서 글을 추가한다. 글을 작성했다면 글 목록 페이지로 이동한다.
+
+board_look.jsp에서 글을 볼 수 있게 한다. 삭제비밀번호 칸에 비밀번호를 넣고 일치하면 글을 삭제하고, (백엔드)
+성공시 글 목록으로 이동, 실패시 현재 페이지로 이동
+
+
+board.jsp에서 board_look.jsp를 볼 수 있는 백엔드를 작성
+
+AdminBoard.jsp: 관리자가 작성된 글들을 볼수있고, 체크박스로 삭제 가능한 페이지
+제목을 누르면 글의 상세 정보가 나오게 된다.
+AdminBoardEdit.jsp: 작성된 글을 관리자가 수정할 수 있는 페이지로, 제목, 내용 삭제비밀번호를 나오게 한다.
+수정완료를 누르면 업데이트를 하는 기능을 벡엔드가 구현한다.
+
+
+백엔드가deleteMember,notice,product 만들기

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원게시판(관리자용)</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- css 링크 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+     <style>
+         .mem_bd { padding-bottom: 150px; }
+         /* 공지목록 스타일 */
+        .tit { margin:200px 100px 100px 100px; text-align:center; }
+        .n_tit { margin:90px 90px 80px 250px; text-align:left; }
+        .n_wrap::after { content:""; display:block; clear:both; }
+        .n_list { margin-left:100px; }
+        .n_list li { float:left; margin:0 0 50px 200px; }
+        .notice { width:300px; }
+        /* 글목록 스타일 */
+        .w_tit { clear:both; border-top:3px solid #333; width:1000px; margin:0 auto; height:36px; }
+        .w_tit li {float:left; width:200px; margin:0 auto; text-align:center; line-height:36px; }
+	    .w_list { list-style:none; clear:both; border-top:1px solid #333; width:1000px; margin:0 auto; height:36px; }
+        .w_list .item3 { text-decoration:underline; }
+	    .w_list li { float:left; width:200px; margin:0 auto; text-align:center; line-height:36px; }
+	    .w_list:last-child { border-bottom:3px solid #333; }
+	    .btn_wrap { width:220px; margin:20px auto; }
+	    .in_btn { width:80px; margin:70px 10px; background-color:#adb1ba; color:#333; 
+            text-align:center; border:0; outline:0; line-height:38px; }
+	    .in_btn:hover { background-color:rgb(228, 208, 119); }
+        [class*="li_"] { float:left; }
+     </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <div class="wrap">
+        <header class="hd">
+            <h1 class="logo"><a href="index.html"><img src="img/typea-logo.png"></a></h1>
+            <div class="hd_wrap">
+                <nav class="tnb">
+                    <ul class="right">
+                        <li><a href="admin.html">관리자 메인 페이지</a></li>
+                        <li><a href="index.html">로그아웃</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 메뉴 -->
+            <div class="hd_wrap">
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="" class="menu">PRODUCT</a>
+                            <ul class="sub">
+                                <li><a href="product_2020.html">2020</a></li>
+                                <li><a href="product_2021.html">2021</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">COMMUNICATION</a>
+                            <ul class="sub">
+                                <li><a href="board.html">회원게시판</a></li>
+                                <li><a href="back.html">건의게시판</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">ABOUT US</a>
+                            <ul class="sub">
+                                <li><a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%ED%98%84%EB%8C%80%EC%98%A4%ED%86%A0%EC%97%90%EB%B2%84" target="blank">뉴스</a></li>
+                                <li><a href="company.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="mem_bd">
+            <!-- 공지목록 -->
+            <h2 class="tit"><br><hr/><br>회원게시판</h2>
+            <h3 class="n_tit"><공지사항></h3>
+            <div class="n_wrap">
+                <ul class="n_list">
+                    <li>
+                        <a href="admin_notice_look.html">
+                            <input type="image" src="img/공지1.png" alt="이미지 버튼" class="notice"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin_notice_look.html">
+                           <input type="image" src="img/공지2.png" alt="이미지 버튼" class="notice"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="admin_notice_look.html">
+                            <input type="image" src="img/공지3.png" alt="이미지 버튼" class="notice"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 글목록 -->
+            <h3 class="n_tit"><글목록></h3>
+            <div calss="w_wrap">
+                <ul class="w_tit">
+                    <li class="item1">글번호 </li>
+                    <li class="item2">ID</li>
+                    <li class="item3">제목</li>
+                    <li class="item4">작성일</li>
+                    <li class="item5">편집</li>
+                </ul>
+                <ul class="w_list">
+                    <li class="item1">1</li>
+                    <li class="item2">test</li>
+                    <li class="item3"><a href="admin_board_look.html" alt="작성글 보기">예시</a></li>
+                    <li class="item4">2021-10-10</li>
+                    <li class="item5"><input type="checkbox"  name="ck"  id=""  class="ck_item" value=""/></li>
+                </ul>
+            </div>
+            <div class="btn_wrap">	
+                <button type="submit" class="in_btn" onclick="location.href='admin_board_add.html'">글등록</button>
+                <button type="reset" class="in_btn" onclick="">취소</button>
+            </div>
+        </section>
+        <!-- 푸터 영역 -->
+        <footer>
+            <div class="box">
+                <div class="li_tel">
+                    <h3>Tel. 02-6296-6000</h3>
+                </div>
+                <div class="li_ft">
+                    <ul>
+                        <li><a class="admin_link" href="admin_login.html">관리자 페이지</a></li>
+                        <li>|</li>
+                        <li><a class="sitemap" href="sitemap.html">사이트맵</a></li>
+                        <li>|</li>
+                        <li><a class="stock" href="https://finance.naver.com/item/main.nhn?code=307950" target="_blank">주식정보</a></li>
+                        <li>|</li>
+                        <li><a class="personal" href="personal.html">개인정보처리방칙</a></li>
+                    </ul>
+                    <p>
+                        COPYRIGHT 2021<br>
+                        HYUNDAI AUTOEVER CORP.<br>
+                        ALL RIGHTS RESERVED.
+                    </p>
+                </div>
+                <div class="li_sns">
+                    <a href="https://blog.naver.com/hyundai-autoever" class="btn blog" title="현대오토에버 공식 블로그 새창열기" target="_blank">
+                        <img src="img/ico-sns-blog-white-m.png">
+                    </a>
+                    <a href="https://www.facebook.com/hyundaiautoever.official/" class="btn facebook" title="현대오토에버 페이스북 새창열기" target="_blank">
+                        <img src="img/ico-sns-facebook-white-m.png">
+                    </a>
+                    <a href="https://www.linkedin.com/company/hyundai-autoever/" class="btn linkedin" title="현대오토에버 링크드인 새창열기" target="_blank">
+                        <img src="img/ico-sns-linkedin-white-m.png">
+                    </a>
+                </div>
+            </div> 
+        </footer>  
+    </div>
+</body>
+</html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고양시 문화관광 메인</title>
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" href="source/img-intro-symbol1-1.ico">
+    <!-- 메타포 설정 -->
+    <meta name="title" content="고양시 관광문화 홈페이지">
+    <meta name="keywords" content="고양시 관광문화, 고양시 여행정보">
+    <meta name="description" content="고양시 관광문화 홈페이지">
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:title" content="고양시 관광문화 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.goyang.go.kr">
+    <meta property="og:description" content="고양시 관광문화">
+    <meta property="og:image" content="img/1.png" />
+    <!-- 폰트 로딩 -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 외부 스타일 연결 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="slide/slick/slick.css">
+    <link rel="stylesheet" href="slide/slick/slick-theme.css">
+    <link rel="stylesheet" href="slide/typo.css">
+    <link rel="stylesheet" href="slide/reset.css">
+
+    <link rel="stylesheet" href="slide/owl/owl.carousel.css">
+    <script src="slide/owl/owl.carousel.js"></script>
+
+    <link rel="stylesheet" href="slide/slick/slick.css">
+    <script src="slide/slick/slick.js"></script>
+
+    <link rel="stylesheet" href="slide/bx/jquery.bxslider.css">
+    <script src="slide/bx/jquery.bxslider.js"></script>
+
+    <link rel="stylesheet" href="slide/wow/wowslider.css">
+    <script src="slide/wow/wowslider.js"></script>
+    <style>
+        /* font-family: 'TTTogether'; */
+        /* font-family: 'Noto Sans KR', sans-serif; */
+        #item1 { background-image: url("source/item1_bg.png"); }
+        #item2 { background-image: url("source/item4_bg.png"); }
+        #item3 { background-image: url("source/item8_bg.png"); }
+        #item4 { background-color: #00436f; }
+        #item5 { background-image: url("source/item3_bg.jpg"); }
+
+        #vs { clear:both; position:relative; width:100%; }
+
+        #vs .img_box { width:400%; }
+        #vs .img_box li { width:25%; float:left; }
+        #vs .img_box li a { display:block; width:100%; }
+        #vs .img_box .vs_img { display:block; width:100%; }
+        #vs .img_box li { position:relative; }
+        #vs .img_box .tit_box { position:absolute; top:250px; left:30px; z-index:4; 
+        padding:60px 280px; color:#fff; text-align:center; -webkit-text-stroke: 1px #000}
+        #vs .img_box .vs_tit { font-family:'TTTogether'; font-size:80px; font-weight:400; text-shadow:2px 2px 2px #333; }
+
+        .content_wrap { clear:both; width:100%; }
+        .btn_box li { display:none; } 
+        .ra { display:none; }
+        #ra1:checked ~ .btn_box li.item1 { display:block; }
+        #ra2:checked ~ .btn_box li.item2 { display:block; }  
+        #ra3:checked ~ .btn_box li.item3 { display:block; }   
+
+        .vs { clear:both; width: 100%; position:relative; overflow-x:hidden; }
+        .img_box { width:400%; transition-duration:0.6s; }
+        .img_box li { width:25%; float:left; }
+        #ra1:checked ~ .img_box { margin-left:0; }
+        #ra2:checked ~ .img_box { margin-left:-100%; }
+        #ra3:checked ~ .img_box { margin-left:-200%; }
+        .btn_box li label { display:block; width:50px; height:50px; position:absolute; background-color:transparent; top:300px; z-index:10; background-repeat:no-repeat;
+            background-position:center center; background-size:100% 100%; position:absolute; text-indent:-10000px; cursor:pointer;}
+        .btn_box li label.prev { left:60px; background-image:url("source/picLeft.jpg"); }
+        .btn_box li label.next { right:60px; background-image:url("source/picRight.jpg"); }
+
+        #page1 { position:relative; }
+        #page1 .ptit_box { background-color: rgb(0, 82, 156); }
+        #item6 { width:400%; transition-delay:0.05s; transition-duration:0.6s; }
+        #item6 li { width:25%; float:left; }
+        .thumb_vs_wrap { position:absolute; right:0; bottom:0; overflow:hidden; width:300px; height:277px; }
+        #item7 { width:400%; transition-delay:0.05s; transition-duration:0.6s; }
+        #item7 li { width:25%; float:left; }
+        #item7 li label { display:block; width:18px; height:36px; background-repeat:no-repeat; background-position:center center; 
+            position:absolute; bottom:100px; text-indent:-10000px; cursor:pointer; }
+        #item7 li label.lb1 { left:24px; background-image:url("source/picLeft.jpg"); }
+        #item7 li label.lb2 { right:24px; background-image:url("source/picRight.jpg"); }
+        #item7 .tbox { width:140px; height:140px; clear:both; overflow:hidden; margin:20px auto; top:50px; 
+        border-radius:75px; border:3px solid rgb(255, 255, 255); }
+        .thumb_vs_wrap #item7 li label { display:none; }
+        .ra { display:none; }
+        #ra1:checked ~ .thumb_vs_wrap #item7 .item1 label { display:block; }
+        #ra2:checked ~ .thumb_vs_wrap #item7 .item2 label { display:block; }
+        #ra3:checked ~ .thumb_vs_wrap #item7 .item3 label { display:block; }
+        #ra4:checked ~ .thumb_vs_wrap #item7 .item4 label { display:block; }
+        #ra1:checked ~ .thumb_vs_wrap #item7 { margin-left: 0; }
+        #ra2:checked ~ .thumb_vs_wrap #item7 { margin-left:-100%; }
+        #ra3:checked ~ .thumb_vs_wrap #item7 { margin-left:-200%; }
+        #ra4:checked ~ .thumb_vs_wrap #item7 { margin-left:-300%; }
+        #ra1:checked ~ #item6 { margin-left: 0; }
+        #ra2:checked ~ #item6 { margin-left:-100%; }
+        #ra3:checked ~ #item6 { margin-left:-200%; }
+        #ra4:checked ~ #item6 { margin-left:-300%; }
+        .col_vs_tit_box { position:absolute; top:0; left:0; }
+        .col_vs_tit { clear:both; width:100%; padding-top:50px; }
+        .col_vs_tit span { display:block; font-family:'TTTogether'; font-weight:400; padding-left:120px; font-size:48px; }
+        .col_vs_tit .row1 { color:#ffffff; -webkit-text-stroke: 1px #000 }
+        .col_vs_tit .row2 { color:#ffffff; -webkit-text-stroke: 1px #000 }
+        #item8 .col_tit, #item9 .col_tit { line-height:1.6; }
+        #item9 .col_com img { border:2px solid #fff; border-radius:100px; }
+        #page1 .col_com { clear:both; float:none; width:auto; margin:0px auto; }
+
+        #page2 { position:relative; }
+        .page:before { content:""; display:block; width:440px; height:440px; position:absolute; background-color:#a0b3ab; border-radius:50%; 
+        left:50%; margin:-490px 0 0 -210px; opacity:0.7; }
+        .ptit_box { width:440px; height:440px; background-color: rgb(0, 105, 84); color:#fff;
+        text-align:center; padding-top:330px; box-sizing:border-box; position:absolute; left:50%; 
+        margin-left:-222px; border-radius:50%; margin-top:-492px; }
+        .pg_tit2 {  font-family:'TTTogether'; font-size:36px; font-weight:400; }
+
+        .col_tit { color:#fff; text-align:center; line-height:3; width:100%; clear:both; margin-top:28px; }
+        .col_tit:after { content:""; display:block; width:40px; height:2px; background-color:#fff; clear:both; margin:0px auto; margin-bottom:20px; }
+        .col_com { color:#fff; padding:20px 60px; font-size:14px; text-align:center; }
+        #page1 .col_link, #page2 .col_link { display:block; clear:both; float:none; width:38px; height:38px; 
+        margin:10px auto; background-image:url("source/family-arrow.png"); border-radius:21px; border:2px solid #fff;
+        text-indent:-10000px; background-repeat:no-repeat; background-position:center center; transform: rotate(90deg); }
+
+        .half_tit1 { font-size:24px; padding:120px 0 0 100px; color:#fff; text-shadow:1px 1px 2px #333; }
+        .half_tit2 { font-size:48px; padding:40px 0 0 100px; color:#fff; 
+        font-family:'TTTogether';  font-weight:400; text-shadow:2px 2px 2px #333; }
+
+        #page3 .ptit_box { background-color:rgb(230, 180, 0); }
+        .icon_lst { clear:both; width:100%; padding-bottom:50px; }
+        .icon_lst:after { content:""; display:block; clear:both; }
+        .icon_lst li { float:left; width:10%; }
+        .icon_lst li a { display:block; text-align:center; color:black; font-size:14px; }
+        .icon_lst li a .ico_box { display:block; width:48px; height:48px; margin:0 auto; margin-top:11px; }
+        #page3 .news_lst { clear:both; background-color:#fff; width:1200px; margin:0 auto; }
+        #page3 .news_lst:after { content:""; display:block; clear:both; }
+        #page3 .news_lst > .col6 { float:left; box-sizing:border-box; position:relative; height:420px; overflow:hidden; }
+        .news_tit, .al_tit { font-size:24px; line-height:3; padding-left:24px; }
+        .news_lst .more { display:block; width:24px; height:24px; background-image:url("source/ico_more.png");
+        background-repeat:no-repeat; background-position:center center; position:absolute; top:24px; right:24px; z-index:10; }
+        .noti_lst { clear:both; height:390px; }
+        .noti_lst li { clear:both; padding:10px 24px; }
+        .noti_lst li a { display:block; color:#666; font-size:16px; }
+        .noti_lst li a .noti_tit { float:left; font-weight:400; width:420px; padding-right:20px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+        .noti_lst li a .noti_date { float:right; width:110px; text-align:center; }
+        .noti_lst li:hover a .noti_tit { text-decoration:underline; }
+        .noti_lst li:hover a .noti_date { text-decoration:underline; }
+        .noti_lst li.act:before { content:""; display:block; width:80px; height:80px; background-image:url("source/notice_act.png"); 
+        background-repeat:no-repeat; background-position:center center; float:left; }
+        .noti_lst li:nth-child(2) { padding-top:30px; }
+        .noti_lst li.act a { float:left; width:460px; overflow:hidden; }
+        .noti_lst li.act a .noti_tit { width:auto; clear:both; font-size:20px; color:#333; }
+        .noti_lst li.act a .noti_com { width:auto; clear:both; border-bottom:1px solid #999; white-space:pre;
+        width:400px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; }
+
+        .al_box { width:199px; float:left; background-color:#a6d189; height:450px; }
+        .al_com { padding:8px 20px; }
+        .al_btn_fr { clear:both; width:168px; margin:20px auto; margin-top:100px; }
+        .al_btn_fr li { float:left; margin:8px; }
+        .al_btn_fr li button { display:block; width:40px; height:40px; background-repeat:no-repeat; background-position:center center; }
+        .al_btn_fr li button.prev { background-image:url("source/picLeft.jpg"); }
+        .al_btn_fr li button.play { background-image:url("source/picPlay.jpg"); }
+        .al_btn_fr li button.next { background-image:url("source/picRight.jpg"); }
+        .photo_box { width:399px; float:right; height:390px; overflow:hidden; }
+        .photo_fr { width:400%; }
+        .photo_fr li { width:25%; float:left; position:relative; }
+        .photo_tit { position:absolute; font-size:20px; color:rgb(85, 85, 85); text-align:center; width:395px; }
+        .photo_com { position:absolute; margin-top:33px; font-size:10px; color:rgb(85, 83, 83); text-align:center; width:395px; }
+        .photo_img { display:block; width:100%; height:auto; margin-top:40px; }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd fix">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                    <img src="img/img-intro-symbol1-1.png" alt="logo">
+                    <h2 class="logo_tit">관광문화</h2>
+                </a>
+                <nav class="tnb">
+                    <ul>
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="join.html">회원가입</a></li>
+                    </ul>
+                </nav>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="goyang.html" class="dp1">관광명소</a>
+                            <ul class="sub">
+                                <li><a href="goyang.html#page1" class="sub1">고양명소</a></li>
+                                <li><a href="goyang.html#page2" class="sub1">산/사찰</a></li>
+                                <li><a href="goyang.html#page3" class="sub1">공원/자연/기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">축제/문화행사</a>
+                            <ul class="sub">
+                                <li><a href="" class="sub2">최신소식/이벤트</a></li>
+                                <li><a href="" class="sub2">정기축제/행사</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">음식/숙박/쇼핑</a>
+                            <ul class="sub">
+                                <li><a href="" class="sub3">숙박</a></li>
+                                <li><a href="" class="sub3">음식점</a></li>
+                                <li><a href="" class="sub3">쇼핑</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">여행/체험</a>
+                            <ul class="sub">
+                                <li><a href="" class="sub4">체험관광</a></li>
+                                <li><a href="" class="sub4">시티투어</a></li>
+                                <li><a href="" class="sub4">추천코스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">관광안내</a>
+                            <ul class="sub">
+                                <li><a href="" class="sub5">문화관광 웹지도</a></li>
+                                <li><a href="" class="sub5">교통정보</a></li>
+                                <li><a href="" class="sub5">관광지도 다운로드</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">공지사항</a>
+                            <ul class="sub">
+                                <li><a href="back.html" class="sub6">공지사항</a></li>
+                                <li><a href="back.html" class="sub6">글쓰기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <hr>
+        <div class="content_wrap">
+            <figure class="vs" id="vs">
+                <input type="radio" name="ra" class="ra" id="ra1" checked>
+                <input type="radio" name="ra" class="ra" id="ra2">
+                <input type="radio" name="ra" class="ra" id="ra3">
+                <ul class="img_box">
+                    <li>
+                        <a href="">
+                            <img src="img/1.png" alt="배너이미지1" clas="vs_img">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">꽃보다 아름다운 사람들의 도시 '고양'</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/2.png" alt="배너이미지1" clas="vs_img">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">고양시가 특례시로 출범합니다!</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/3.png" alt="배너이미지1" clas="vs_img">
+                            <div class="tit_box">
+                                <h2 class="vs_tit">2050 탄소중립 고양시가 선도합니다</h2>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="btn_box">
+                    <li class="item1">
+                        <label for="ra3" class="prev"></label>
+                        <label for="ra2" class="next"></label>
+                    </li>
+                    <li class="item2">
+                        <label for="ra1" class="prev"></label>
+                        <label for="ra3" class="next"></label>
+                    </li>
+                    <li class="item3">
+                        <label for="ra2" class="prev"></label>
+                        <label for="ra1" class="next"></label>
+                    </li>
+                </ul>
+            </figure>
+            <section class="page fix" id="page1" style="background-color: rgb(26, 136, 231);">
+                <div class="ptit_box">
+                    <h4 class="pg_tit1">고양시 관광 안내</h4>
+                    <h2 class="pg_tit2">관광 도우미</h2>
+                </div>
+                <div class="page_wrap">
+                    <ul class="grid">
+                        <li class="col6 col554">
+                            <div class="half_box col_item col554" style="position:relative;">
+                                <input type="radio" class="ra" id="ra1" checked>
+                                <input type="radio" class="ra" id="ra2">
+                                <input type="radio" class="ra" id="ra3">
+                                <input type="radio" class="ra" id="ra4">
+                                <ul class="pic_ban col554" id="item6">
+                                    <li class="item1">
+                                        <img src="img/img1.png" alt="서오릉" width="600px" height="600px" >
+                                    </li>
+                                    <li class="item2">
+                                        <img src="img/img7.png" alt="중남미문화원" width="600px" height="600px" >
+                                    </li>
+                                    <li class="item3">
+                                        <img src="img/img4.png" alt="호수공원" width="600px" height="600px" >
+                                    </li>
+                                    <li class="item4">
+                                        <img src="img/img11.png" alt="현대모터스튜디오" width="600px" height="600px">
+                                    </li>
+                                </ul>
+                                <div class="thumb_vs_wrap">
+                                    <ul class="thumb_ban col6 col277 col_item" id="item7" style="background-color:rgb(36, 85, 131)">
+                                        <li class="item1">
+                                            <h3 class="col_tit">역사탐방</h3>
+                                            <label for="ra4" class="lb1">이전</label>
+                                            <div class="tbox"><img src="img/img2.png" alt="흥국사"></div>
+                                            <label for="ra2" class="lb2">다음</label>
+                                        </li>
+                                        <li class="item2">
+                                            <h3 class="col_tit">문화감성</h3>
+                                            <label for="ra1" class="lb1">이전</label>
+                                            <div class="tbox"><img src="img/img3.png" alt="중남미문화원"></div>
+                                            <label for="ra3" class="lb2">다음</label>
+                                        </li>
+                                        <li class="item3">
+                                            <h3 class="col_tit">호수공원</h3>
+                                            <label for="ra2" class="lb1">이전</label>
+                                            <div class="tbox"><img src="img/img5.png" alt="호수공원"></div>
+                                            <label for="ra4" class="lb2">다음</label>
+                                        </li>
+                                        <li class="item4">
+                                            <h3 class="col_tit">오감체험</h3>
+                                            <label for="ra3" class="lb1">이전</label>
+                                            <div class="tbox"><img src="img/img10.png" alt="아람미술관"></div>
+                                            <label for="ra1" class="lb2">다음</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col_vs_tit_box">
+                                    <h2 class="col_vs_tit">
+                                        <span class="row1">Welcome to</span>
+                                        <span class="row2">GoyangCity</span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col6 col554">
+                            <div class="col6 col277 col_item" id="item8">
+                                <h3 class="col_tit">관광안내홍보물 신청</h3>
+                                <p class="col_com">
+                                    <img src="source/quick_01.png" alt="관광안내홍보물 신청">
+                                </p>
+                            </div>
+                            <div class="col6 col277 col_item" id="item9">
+                                <h3 class="col_tit">문화관광해설안내 및 예약</h3>
+                                <p class="col_com">
+                                    <img src="source/quick_02.png" alt="문화관광해설안내 및 예약">
+                                </p>
+                            </div>
+                            <div class="col6 col277 col_item" id="item10">
+                                <h3 class="col_tit">사이버 역사 박물관</h3>
+                                <p class="col_com">
+                                    <img src="source/quick_03.png" alt="사이버 역사 박물관">
+                                </p>
+                            </div>
+                            <div class="col6 col277 col_item" id="item11">
+                                <h3 class="col_tit">의료관광서비스</h3>
+                                <p class="col_com">
+                                    <img src="source/quick_05.png" alt="의료관광서비스">
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="page fix" id="page2" style="background-color: rgb(0, 156, 124);">
+                <div class="ptit_box">
+                    <h4 class="pg_tit1">축제 정보 안내</h4>
+                    <h2 class="pg_tit2">축제 정보 모음</h2>
+                </div>
+                <div class="page_wrap">
+                    <ul class="grid">
+                        <li class="col6">
+                            <div class="col6 col_item col277" id="item1">
+                                <h3 class="col_tit">밤가시 초가</h3>
+                                <p class="col_com">경기도 민속문화재 제8호로 조선후기 중부지방의 전통적인 서민 농촌주택</p>
+                                <a href="" class="col_link">더보기</a>
+                            </div>
+                            <div class="col6 col_item col277" id="item2">
+                                <h3 class="col_tit">고양향교</h3>
+                                <p class="col_com">조선시대의 국립교육기관 역할을 한 곳</p>
+                                <a href="" class="col_link">더보기</a>
+                            </div>
+                            <div class="col6 col_item col277" id="item3">
+                                <h3 class="col_tit">원당종마목장</h3>
+                                <p class="col_com">한국마사회에서 운영하는 경기용 말 사육장</p>
+                                <a href="" class="col_link">더보기</a>
+                            </div>
+                            <div class="col6 col_item col277" id="item4">
+                                <h3 class="col_tit">창릉천</h3>
+                                <p class="col_com">북한산 효자계곡에서 발원하여 고양시 행주동에서 한강과 만나는 물길</p>
+                                <a href="" class="col_link">더보기</a>
+                            </div>
+                        </li>
+                        <li class="col6">
+                            <div class="half_box col_item col554" id="item5">
+                                <h2 class="half_tit1">도보코스 30선</h2>
+                                <p class="half_tit2">관광서포터즈 추천코스</p>
+                                <a href="" class="col_link half_more">더보기</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="page fix" id="page3" style="background-color: rgb(255, 223, 106);">
+                <div class="ptit_box">
+                    <h4 class="pg_tit1">소식 및 다양한 정보</h4>
+                    <h2 class="pg_tit2">고양시 소식정보</h2>
+                </div>
+                <div class="page_wrap">
+                    <ul class="icon_lst">
+                        <li class="item1">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon1.png" alt="관광안내지도"></div>
+                                <span class="ico_txt">관광안내지도</span>
+                            </a>
+                        </li>
+                        <li class="item2">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon2.png" alt="관광안내소"></div>
+                                <span class="ico_txt">관광안내소</span>
+                            </a>
+                        </li>
+                        <li class="item3">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon3.png" alt="관광지요금"></div>
+                                <span class="ico_txt">관광지요금</span>
+                            </a>
+                        </li>
+                        <li class="item4">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon4.png" alt="문화관광해설사"></div>
+                                <span class="ico_txt">문화관광해설사</span>
+                            </a>
+                        </li>
+                        <li class="item5">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon5.png" alt="고양관광여행사"></div>
+                                <span class="ico_txt">고양관광여행사</span>
+                            </a>
+                        </li>
+                        <li class="item6">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon6.png" alt="교통정보"></div>
+                                <span class="ico_txt">교통정보</span>
+                            </a>
+                        </li>
+                        <li class="item7">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon7.png" alt="렌터카"></div>
+                                <span class="ico_txt">렌터카</span>
+                            </a>
+                        </li>
+                        <li class="item8">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon8.png" alt="콜택시"></div>
+                                <span class="ico_txt">콜택시</span>
+                            </a>
+                        </li>
+                        <li class="item9">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon9.png" alt="시티투어"></div>
+                                <span class="ico_txt">시티투어</span>
+                            </a>
+                        </li>
+                        <li class="item10">
+                            <a href="">
+                                <div class="ico_box"><img src="source/sec3_icon10.png" alt="농특산물"></div>
+                                <span class="ico_txt">농특산물</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="news_lst">
+                        <li class="col6">
+                            <h3 class="news_tit">새소식</h3>
+                            <a href="" class="more"></a>
+                            <ul class="noti_lst">
+                                <li class="act">
+                                    <a href="">
+                                        <h4 class="noti_tit">
+                                            뮤비 속 고양시를 찾아라! 고양 평화누리길을 소개합니다.
+                                        </h4>
+                                        <p class="noti_com">공지사항
+딘딘 신곡, 이러면 안 될 거 아는데 너 앞에만 서면 나락 https://youtu.be/9BsZ2G-TaIo
+뮤직비디오 촬영지는 어디?
+뮤직비디오 속 멋진 풍경을 즐기러 고양시 평화누리길로 오세요!
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <h4 class="noti_tit">한강하구 생태역사평화이야기 <겨울, 새가 날다> 프로그램 안내</h4>
+                                        <p class="noti_date">2022-01-05</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <h4 class="noti_tit">뻔뻔(FUN-FUN)한 마켓고양 개최 안내</h4>
+                                        <p class="noti_date">2022-01-05</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <h4 class="noti_tit">2021푸드앤비어 페스티벌 개최 안내</h4>
+                                        <p class="noti_date">2022-01-05</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="col6">
+                            <div class="al_box">
+                                <h3 class="al_tit">내가 찍은 고양</h3>
+                                <p class="al_com">꽃보다 아름다운 사람들의 도시</p>
+                                <ul class="al_btn_fr">
+                                    <li><button class="prev"></button></li>
+                                    <li><button class="play"></button></li>
+                                    <li><button class="next"></button></li>
+                                </ul>
+                            </div>
+                            <div class="photo_box">
+                                <ul class="photo_fr">
+                                    <li>
+                                        <img src="source/photo2.jpg" alt="사진1" class="photo_img">
+                                        <h4 class="photo_tit">새해 맞이 등산</h4>
+                                        <p class="photo_com">2022-01-05</p>
+                                    </li>
+                                    <li>
+                                        <img src="source/photo3.jpg" alt="사진2" class="photo_img">
+                                        <h4 class="photo_tit">바다풍경</h4>
+                                        <p class="photo_com">2022-01-05</p>
+                                    </li>
+                                    <li>
+                                        <img src="source/photo4.jpg" alt="사진3" class="photo_img">
+                                        <h4 class="photo_tit">동굴사진</h4>
+                                        <p class="photo_com">2022-01-05</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <hr>
+            <footer class="ft fix">
+                <div class="ft_wrap">
+                    <nav class="linkbar">
+                        <ul>
+                            <li><a href="login.html#page3">개인정보처리방침</a></li>
+                        </ul>
+                    </nav>
+                    <div class="copyright">
+                        <p class="addr">경기도 고양시 덕양구 고양시청로10 (우) 10460 민원콜센터(시청) 031-909-9000 수화상담(경기도)070-7947-3939</p>
+                        <p class="copy">Copyright 2018 GOYANGCITY. All rights reserved.</p>
+                    </div>
+                    <div class="wa"><img src="img/wacc-logo.png" alt="WA인증로고"></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 목록(관리자용)</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- css 링크 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .tit { width:100px; margin:200px auto 50px; }
+        .w_tit { clear:both; border-top:3px solid #333; width:600px; margin:0 auto; height:36px; }
+        .w_tit li {float:left; width:200px; margin:0 auto; text-align:center; line-height:36px; }
+	    .w_list { list-style:none; clear:both; border-top:1px solid #333; width:600px; margin:0 auto; height:36px; }
+	    .w_list li { float:left; width:200px; margin:0 auto; text-align:center; line-height:36px; }
+	    .w_list:last-child { border-bottom:3px solid #333; }
+        .btn_wrap { width:220px; margin:20px auto; }
+	    .in_btn { width:80px; margin:70px 10px; background-color:#adb1ba; color:#333; 
+            text-align:center; border:0; outline:0; line-height:38px; }
+	    .in_btn:hover { background-color:rgb(228, 208, 119); }
+        [class*="li_"] { float:left; }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <div class="wrap">
+        <header class="hd">
+            <h1 class="logo"><a href="index.html"><img src="img/typea-logo.png"></a></h1>
+            <div class="hd_wrap">
+                <nav class="tnb">
+                    <ul class="right">
+                        <li><a href="admin.html">관리자 메인 페이지</a></li>
+                        <li><a href="index.html">로그아웃</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 메뉴 -->
+            <div class="hd_wrap">
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="" class="menu">PRODUCT</a>
+                            <ul class="sub">
+                                <li><a href="product_2020.html">2020</a></li>
+                                <li><a href="product_2021.html">2021</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">COMMUNICATION</a>
+                            <ul class="sub">
+                                <li><a href="board.html">회원게시판</a></li>
+                                <li><a href="back.html">건의게시판</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">ABOUT US</a>
+                            <ul class="sub">
+                                <li><a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%ED%98%84%EB%8C%80%EC%98%A4%ED%86%A0%EC%97%90%EB%B2%84" target="blank">뉴스</a></li>
+                                <li><a href="company.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- 본문 -->
+        <h2 class="tit">회원 목록</h2>
+        <div class="w_wrap">
+            <ul class="w_tit">
+                <li class="item1">회원아이디 </li>
+                <li class="item2">회원명</li>
+                <li class="item3">편집</li>
+            </ul>
+        </div>
+        <form action="DeleteMemberCtrl" method="post" name="delForm"  onsubmit="return frm_submit(this)">
+            <div class="w_list">
+                <ul class="lst">
+                    <li class="item1"><a href="">test</a></li>
+                    <li class="item2">테스트</li>
+                    <li class="item3">
+                        <input type="checkbox"  name="ck"  id=""  class="ck_item" value=""/>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn_wrap">	
+                <button type="submit" class="in_btn" onclick="">삭제</button>
+                <button type="reset" class="in_btn" onclick="">취소</button>
+            </div>
+        </form>
+        <!-- 푸터 영역 -->
+        <footer>
+            <div class="box">
+                <div class="li_tel">
+                    <h3>Tel. 02-6296-6000</h3>
+                </div>
+                <div class="li_ft">
+                    <ul>
+                        <li><a class="admin_link" href="admin_login.html">관리자 페이지</a></li>
+                        <li>|</li>
+                        <li><a class="sitemap" href="sitemap.html">사이트맵</a></li>
+                        <li>|</li>
+                        <li><a class="stock" href="https://finance.naver.com/item/main.nhn?code=307950" target="_blank">주식정보</a></li>
+                        <li>|</li>
+                        <li><a class="personal" href="personal.html">개인정보처리방칙</a></li>
+                    </ul>
+                    <p>
+                        COPYRIGHT 2021<br>
+                        HYUNDAI AUTOEVER CORP.<br>
+                        ALL RIGHTS RESERVED.
+                    </p>
+                </div>
+                <div class="li_sns">
+                    <a href="https://blog.naver.com/hyundai-autoever" class="btn blog" title="현대오토에버 공식 블로그 새창열기" target="_blank">
+                        <img src="img/ico-sns-blog-white-m.png">
+                    </a>
+                    <a href="https://www.facebook.com/hyundaiautoever.official/" class="btn facebook" title="현대오토에버 페이스북 새창열기" target="_blank">
+                        <img src="img/ico-sns-facebook-white-m.png">
+                    </a>
+                    <a href="https://www.linkedin.com/company/hyundai-autoever/" class="btn linkedin" title="현대오토에버 링크드인 새창열기" target="_blank">
+                        <img src="img/ico-sns-linkedin-white-m.png">
+                    </a>
+                </div>
+            </div> 
+        </footer>  
+    </div>
+    
+</body>
+</html>

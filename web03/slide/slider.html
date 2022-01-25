@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이더 연습</title>
+    <link rel="stylesheet" href="typo.css">
+    <link rel="stylesheet" href="reset.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <link rel="stylesheet" href="./owl/owl.carousel.css">
+    <script src="./owl/owl.carousel.js"></script>
+
+    <link rel="stylesheet" href="./slick/slick.css">
+    <script src="./slick/slick.js"></script>
+
+    <link rel="stylesheet" href="./bx/jquery.bxslider.css">
+    <script src="./bx/jquery.bxslider.js"></script>
+
+    <link rel="stylesheet" href="./wow/wowslider.css">
+    <script src="./wow/wowslider.js"></script>
+
+    <style>
+    .wrap { clear:both; width: 100%; }  
+    .btn_box li { display:none; } 
+    .ra { display:none; }
+    #ra1:checked ~ .btn_box li.item1 { display:block; }
+    #ra2:checked ~ .btn_box li.item2 { display:block; }  
+    #ra3:checked ~ .btn_box li.item3 { display:block; }  
+    #ra4:checked ~ .btn_box li.item4 { display:block; }  
+
+    .vs { clear:both; width: 100%; position:relative; overflow-x:hidden; }
+    .img_box { width: 400%; transition-duration:0.6s; }
+    .img_box li { width: 25%; float:left; }
+    #ra1:checked ~ .img_box { margin-left: 0; }
+    #ra2:checked ~ .img_box { margin-left:-100%; }
+    #ra3:checked ~ .img_box { margin-left:-200%; }
+    #ra4:checked ~ .img_box { margin-left:-300%; }
+    .btn_box li label { display:block; width: 100px; height: 100px; position:absolute; background-color:#fff; top:120px; z-index:10; }
+    .btn_box li label.prev { left:60px; }
+    .btn_box li label.next { right:60px; }
+
+    .vs2 { clear:both; width: 100%; overflow-x:hidden; position:relative; }
+    .owl-nav div { position:absolute; top:45vh; z-index:10; 
+    width: 20px; height: 40px; background-color: #fff; text-indent:-10000px; }
+    .owl-next { right:80px; }
+    .owl-prev { left:80px;  }
+    .owl-dots { position:absolute; bottom:80px; width: 160px; height:30px; 
+    z-index:11; left: 50%; margin-left: -80px; }
+    .owl-dots div { display:block; width: 20px; height: 20px; float:left; background-color: #fff; border-radius:12px; margin: 10px; }
+    .owl-dots div.active { background:deepskyblue; }
+
+    .vs3 { clear:both; width: 100%; overflow:hidden; position:relative; }
+    button.slick-next.slick-arrow, button.slick-prev.slick-arrow { display:block;
+    width: 20px; height: 40px; position:absolute; bottom:42vh; z-indeX:10; background-color: #fff;  text-indent:-10000px; }
+    button.slick-next.slick-arrow { right:60px; }
+    button.slick-prev.slick-arrow { left: 60px; }
+    .slick-dots { position:absolute; width: 160px; left: 50%; margin-left: -80px; 
+    bottom:80px; }
+    .slick-dots li { float:left; margin: 10px; }
+    .slick-dots li button { display:block; width: 20px; height: 20px; border-radius:12px; background-color: #fff; text-indent:-10000px; }
+    .slick-dots li.slick-active button { background-color: deepskyblue; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <figure class="vs">
+        <input type="radio" name="ra" class="ra" id="ra1" checked>
+        <input type="radio" name="ra" class="ra" id="ra2">
+        <input type="radio" name="ra" class="ra" id="ra3">
+        <input type="radio" name="ra" class="ra" id="ra4">
+        <ul class="img_box">
+            <li><img src="./data/vs1.jpg" alt="비주얼1"></li>
+            <li><img src="./data/vs2.jpg" alt="비주얼2"></li>
+            <li><img src="./data/vs3.jpg" alt="비주얼3"></li>
+            <li><img src="./data/vs4.jpg" alt="비주얼4"></li>
+        </ul>
+        <ul class="btn_box">
+            <li class="item1">
+                <label for="ra4" class="prev">이전4</label>
+                <label for="ra2" class="next">다음2</label>
+            </li>
+            <li class="item2">
+                <label for="ra1" class="prev">이전1</label>
+                <label for="ra3" class="next">다음3</label>
+            </li>
+            <li class="item3">
+                <label for="ra2" class="prev">이전2</label>
+                <label for="ra4" class="next">다음4</label>
+            </li>
+            <li class="item4">
+                <label for="ra3" class="prev">이전3</label>
+                <label for="ra1" class="next">다음1</label>
+            </li>
+        </ul>
+    </figure>
+    <hr>
+    <figure class="vs2">
+        <div class="vs2_wrap">
+            <ul class="img_box2 owl-carousel">
+                <li><img src="./data/vs1.jpg" alt="비주얼1"></li>
+                <li><img src="./data/vs2.jpg" alt="비주얼2"></li>
+                <li><img src="./data/vs3.jpg" alt="비주얼3"></li>
+                <li><img src="./data/vs4.jpg" alt="비주얼4"></li>
+            </ul>
+        </div>
+    </figure>
+    <script>
+    $(function(){
+        $(".owl-carousel").owlCarousel({
+            autoplay:true,  //자동 실행
+            loop:true,   //순환 반복
+            margin:0,   //아이템간 여백
+            nav:true,    //제어바
+            mouseDrag:true, //마우스 드래그 허용
+            dots:true,  //번호별 버튼 추가
+        });
+    });    
+    </script>
+    <hr>
+    <figure class="vs3 slick">
+        <div class="vs3_wrap">
+            <div class="img_box3 single-item">
+                <div class="item"><img src="./data/vs1.jpg" alt="비주얼1"></div>
+                <div class="item"><img src="./data/vs2.jpg" alt="비주얼2"></div>
+                <div class="item"><img src="./data/vs3.jpg" alt="비주얼3"></div>
+                <div class="item"><img src="./data/vs4.jpg" alt="비주얼4"></div>
+            </div>
+        </div>
+    </figure>
+    <script>
+    $(function(){
+        $(".single-item").slick({
+            dots:true,  //번호별 버튼 추가
+            arrows:true,    //좌우 버튼 추가
+            infinite:true,  //순환 반복
+            speed:300,  //한 슬라이드당 속도
+            autoplay:true,  //자동 실행
+            autoplaySpeed:3500, //한 슬라이딩하고, 기다리는 시간
+        });
+    });
+    </script>
+    <figure class="vs4 bx-wrapper">
+        <div class="vs4_wrap bx-viewport">
+            <ul class="img_box4 bx-slider">
+                <li class="item"><img src="./data/vs1.jpg" title="비주얼1" alt="비주얼1"></li>
+                <li class="item"><img src="./data/vs2.jpg" title="비주얼2" alt="비주얼2"></li>
+                <li class="item"><img src="./data/vs3.jpg" title="비주얼3" alt="비주얼3"></li>
+                <li class="item"><img src="./data/vs4.jpg" title="비주얼4" alt="비주얼4"></li>
+            </ul>
+        </div>
+    </figure>
+    <script>
+    $(function(){
+        $(".bx-slider").bxSlider({
+            auto:true, //자동 슬라이딩
+            speed:500,  //한 슬라이딩 속도
+            pause:4000, //한 이미지 슬라이딩 후 지연속도
+            mode:'horizontal', //슬라이딩 효과(fade, horizontal, vertical)
+            autoControls:true, //시작,중지 버튼 추가 및 활성화
+            pager:true, //페이징 버튼 만들기
+            captions:true, //img요소에 걸려 있는 title 속성을 제목으로 설정할 것인지
+        });
+    });    
+    </script>
+    <hr>
+    <figure class="vs5">
+        <div class="vs5_wrap">
+            <ul class="img_box5">
+                <li class="item"><img src="./data/vs1.jpg" title="비주얼1" alt="비주얼1"></li>
+                <li class="item"><img src="./data/vs2.jpg" title="비주얼2" alt="비주얼2"></li>
+                <li class="item"><img src="./data/vs3.jpg" title="비주얼3" alt="비주얼3"></li>
+                <li class="item"><img src="./data/vs4.jpg" title="비주얼4" alt="비주얼4"></li>
+            </ul>
+        </div>
+    </figure>
+    <script>
+    $(function(){
+        $("img_box5").wowSlider({
+
+        });
+    });    
+    </script>
+</div>   
+</body>
+</html>

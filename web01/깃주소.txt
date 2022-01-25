@@ -1,0 +1,9 @@
+git pull https://github.com/foodduck/project1.git
+
+https://github.com/sooj728/sooj728.github.io.git
+
+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
+
+git confit --global credential.helper cache
+
+..

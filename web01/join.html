@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- css 링크 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        h2 { margin:200px 100px 100px 100px; text-align:center; }
+        form { margin:100px 0 100px 850px; font-size:20px; }
+        .datalist { padding:15px; }
+        .inputs { display:block; }
+        button { width:120px; height:50px; color:white; background-color:rgb(161, 161, 161); border-radius:10px; font-size:16px; }
+        [class*="li_"] { float:left; }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <div class="wrap">
+        <header class="hd">
+            <h1 class="logo"><a href="index.html"><img src="img/typea-logo.png"></a></h1>
+            <div class="hd_wrap">
+                <nav class="tnb">
+                    <ul class="right">
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="join.html">회원가입</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 메뉴 -->
+            <div class="hd_wrap">
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="" class="menu">PRODUCT</a>
+                            <ul class="sub">
+                                <li><a href="product_2020.html">2020</a></li>
+                                <li><a href="product_2021.html">2021</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">COMMUNICATION</a>
+                            <ul class="sub">
+                                <li><a href="back.html">회원게시판</a></li>
+                                <li><a href="back.html">건의게시판</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">ABOUT US</a>
+                            <ul class="sub">
+                                <li><a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%ED%98%84%EB%8C%80%EC%98%A4%ED%86%A0%EC%97%90%EB%B2%84" target="blank">뉴스</a></li>
+                                <li><a href="company.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- 본문 -->
+        <h2>회원가입</h2>
+        <form action="joinPro.jsp" class="frm" method="post" name="joinform" onsubmit="return joinCheck(this)">
+            <div class="datalist">
+                <label for="m_id" class="inputs">아이디 </label>
+                <input type="text" id="m_id" name="m_id" class="indata" placeholder="ID" autofocus required>
+                <input type="button" value="중복확인" class="pushdata" onclick="idCheck()">
+                <input type="hidden" name="passbtn1" id="passbtn1">
+            </div>
+	        <div class="datalist">
+	            <label for="m_pw" class="inputs">비밀번호 </label>
+	            <input type="password" id="m_pw" name="m_pw" class="indata" required>
+	        </div>
+	        <div class="datalist">
+	            <label for="m_pw2" class="inputs">비밀번호 확인</label>
+	            <input type="password" id="m_pw2" name="m_pw2" class="indata" required>
+	        </div>
+	        <div class="datalist">
+	            <label for="m_name" class="inputs">이름입력 </label>
+	            <input type="text" id="m_name" name="m_name"  class="indata" placeholder="홍길동" required>
+	        </div>
+	        <div class="datalist">
+	            <label for ="m_email" class="inputs">이메일 </label>
+	            <input type="text" id="m_email" name="m_email" class="indata" pattern="\w+@\w+\.\w+" required>
+	            <input type="button" value="중복확인" class="pushdata" onclick="emailCheck()">
+	            <input type="hidden" name="passbtn2" id="passbtn2">
+	        </div>
+	        <div class="datalist">
+	            <label for ="m_question" class="inputs">비밀번호를 찾기 위한 질문을 정하세요.</label>
+	            <input type ="text" id="m_question" name ="m_question" class="indata" pattern="w{1-100}" required>
+	        </div>
+	        <div class="datalist">
+	            <label for ="m_answer" class="inputs">질문의 답을 정하세요.</label>
+	            <input type ="text" id="m_answer" name ="m_answer" class="indata" pattern="w{1-100}" required>
+	        </div>
+	        <div class="datalist">
+	            <label for="zipcode" class="inputs">우편번호</label>
+	            <input type="text" name="m_address1" id="m_address1"  class="indata"/>
+	            <input type="button" value="주소찾기" onclick="findAddr()" class="pushdata"/>
+	        </div>
+	        <div class="datalist">
+	            <label for ="address1" class="inputs">주소</label>
+	            <input type ="text" name="m_address2"	id="m_address2"  class="indata"/>
+	        </div>
+	        <div class="datalist">
+	            <button type="submit" name="next" value="next" class="next_btn" onclick="location.href='join_done.html'">다음으로</button>
+	        </div>
+	    </form>
+        <!-- 푸터 영역 -->
+        <footer>
+            <div class="box">
+                <div class="li_tel">
+                    <h3>Tel. 02-6296-6000</h3>
+                </div>
+                <div class="li_ft">
+                    <ul>
+                        <li><a class="admin_link" href="admin_login.html">관리자 페이지</a></li>
+                        <li>|</li>
+                        <li><a class="sitemap" href="sitemap.html">사이트맵</a></li>
+                        <li>|</li>
+                        <li><a class="stock" href="https://finance.naver.com/item/main.nhn?code=307950" target="_blank">주식정보</a></li>
+                        <li>|</li>
+                        <li><a class="personal" href="personal.html">개인정보처리방칙</a></li>
+                    </ul>
+                    <p>
+                        COPYRIGHT 2021<br>
+                        HYUNDAI AUTOEVER CORP.<br>
+                        ALL RIGHTS RESERVED.
+                    </p>
+                </div>
+                <div class="li_sns">
+                    <a href="https://blog.naver.com/hyundai-autoever" class="btn blog" title="현대오토에버 공식 블로그 새창열기" target="_blank">
+                        <img src="img/ico-sns-blog-white-m.png">
+                    </a>
+                    <a href="https://www.facebook.com/hyundaiautoever.official/" class="btn facebook" title="현대오토에버 페이스북 새창열기" target="_blank">
+                        <img src="img/ico-sns-facebook-white-m.png">
+                    </a>
+                    <a href="https://www.linkedin.com/company/hyundai-autoever/" class="btn linkedin" title="현대오토에버 링크드인 새창열기" target="_blank">
+                        <img src="img/ico-sns-linkedin-white-m.png">
+                    </a>
+                </div>
+            </div> 
+        </footer>  
+    </div>
+</body>
+</html>

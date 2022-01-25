@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 조회 화면(관리자용)</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <!-- css 링크 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .tit { padding-top:200px; line-height:50px; text-align:center; }
+        form { padding-bottom:150px; }
+        table { display:table; border-collapse:collapse; }
+        tr { display:table-row; }
+        th, td { display:table-cell; }
+        .tb { width:900px; margin:20px auto; }
+        .tb th, .tb td { line-height:42px; border-bottom:1px solid #333; }
+        .tb th { background:#8c98b4; color:black; }
+        .tb tr:first-child th, .tb tr:first-child td { border-top:1px solid #333; } 
+        .in_data { display:block; line-height:32px; height:32px; margin-left:10px; padding-left:5px; width:800px; }
+        .in_data_area { line-height:1.6; padding:5px; width:800px; height:600px; margin-left:10px; }
+        .btn_wrap { width:220px; margin:20px auto; }
+        .btn_wrap .in_btn { display:block; width:80px; margin:15px; background-color:#333; color:#fff; 
+            text-align:center; border:0; outline:0; float:left; line-height:38px; }
+        .btn_wrap .in_btn:hover { background-color:rgb(228, 208, 119); color:black; }
+        .in_comment { padding-left:18px; }
+        input[readonly] { background:#f1f1f1; }
+        [class*="li_"] { float:left; }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <div class="wrap">
+        <header class="hd">
+            <h1 class="logo"><a href="index.html"><img src="img/typea-logo.png"></a></h1>
+            <div class="hd_wrap">
+                <nav class="tnb">
+                    <ul class="right">
+                        <li><a href="admin.html">관리자 메인 페이지</a></li>
+                        <li><a href="index.html">로그아웃</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 메뉴 -->
+            <div class="hd_wrap">
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="" class="menu">PRODUCT</a>
+                            <ul class="sub">
+                                <li><a href="product_2020.html">2020</a></li>
+                                <li><a href="product_2021.html">2021</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">COMMUNICATION</a>
+                            <ul class="sub">
+                                <li><a href="board.html">회원게시판</a></li>
+                                <li><a href="back.html">건의게시판</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="menu">ABOUT US</a>
+                            <ul class="sub">
+                                <li><a href="https://search.naver.com/search.naver?where=news&sm=tab_jum&query=%ED%98%84%EB%8C%80%EC%98%A4%ED%86%A0%EC%97%90%EB%B2%84" target="blank">뉴스</a></li>
+                                <li><a href="company.html">회사소개</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- 글쓰기 -->
+        <h2 class="tit">게시글 조회</h2>
+        <form action="EditNoticeCtrl" method="post" id="frm" name="frm">
+            <table class="tb">
+                <tbody>
+                    <tr>
+                        <th class="col_hd">
+                            <label for="title">제목</label>
+                        </th>
+                        <td class="col_data">
+                            <input type="text" id="title" name="title" class="in_data" value="예시"  required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col_hd">
+                            <label for="content">글 내용</label>
+                        </th>
+                        <td class="col_data">
+                            <textarea id="content" name="content" class="in_data_area"  cols="60" rows="15" required>테스트입니다</textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn_wrap">	
+                <button type="reset" class="in_btn" onclick="location.href='admin_board_edit.html'">수정</button>
+                <button type="reset" class="in_btn" onclick="location.href='admin_board.html'">삭제</button>
+            </div>
+        </form>
+        <!-- 푸터 영역 -->
+        <footer>
+            <div class="box">
+                <div class="li_tel">
+                    <h3>Tel. 02-6296-6000</h3>
+                </div>
+                <div class="li_ft">
+                    <ul>
+                        <li><a class="admin_link" href="admin_login.html">관리자 페이지</a></li>
+                        <li>|</li>
+                        <li><a class="sitemap" href="sitemap.html">사이트맵</a></li>
+                        <li>|</li>
+                        <li><a class="stock" href="https://finance.naver.com/item/main.nhn?code=307950" target="_blank">주식정보</a></li>
+                        <li>|</li>
+                        <li><a class="personal" href="personal.html">개인정보처리방칙</a></li>
+                    </ul>
+                    <p>
+                        COPYRIGHT 2021<br>
+                        HYUNDAI AUTOEVER CORP.<br>
+                        ALL RIGHTS RESERVED.
+                    </p>
+                </div>
+                <div class="li_sns">
+                    <a href="https://blog.naver.com/hyundai-autoever" class="btn blog" title="현대오토에버 공식 블로그 새창열기" target="_blank">
+                        <img src="img/ico-sns-blog-white-m.png">
+                    </a>
+                    <a href="https://www.facebook.com/hyundaiautoever.official/" class="btn facebook" title="현대오토에버 페이스북 새창열기" target="_blank">
+                        <img src="img/ico-sns-facebook-white-m.png">
+                    </a>
+                    <a href="https://www.linkedin.com/company/hyundai-autoever/" class="btn linkedin" title="현대오토에버 링크드인 새창열기" target="_blank">
+                        <img src="img/ico-sns-linkedin-white-m.png">
+                    </a>
+                </div>
+            </div> 
+        </footer>  
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글쓰기</title>
+    <!-- 파비콘 설정-->
+    <link rel="shortcut icon" href="source/favi_swA_icon.ico" type="image/x-icon" />
+    <!-- 메타포 설정-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=23, user-scalable=yes" />
+    <meta name="description" content="외교부 홈페이지에 오신것을 환영합니다." />
+    <meta name="keywords" content="외교부,외교부,여권,비자,재외공관" />
+    <meta name="author" content="외교부" />
+    <meta name="format-detection" content="telephone=no">
+    <!-- 오픈그래프 설정-->
+    <meta property="og:image" content="http://www.mofa.go.kr/images/www/common/logo.PNG"/>
+    <!-- 폰트 로딩-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <!-- 필요한 라이브러리 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 구글 애널리틱스 연결 : 방문자 통계 및 로그분석 -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BQB1Z9PXG4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BQB1Z9PXG4');
+    </script>
+    <!-- 사용자 외부 스타일 연결-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+      .top { width:100%; height:200px; background-image:url("img/bg_lnb.jpg"); opacity:0.85; }
+      .top_tit { text-align:center; font-weight:500; font-size:50px; color:#fff; padding-top:60px; }
+      .frm { padding:100px 0 150px; }
+      table { display:table; border-collapse:collapse; }
+      tr { display:table-row; }
+      th, td { display:table-cell; }
+      .tb { width:900px; margin:20px auto; }
+      .tb th, .tb td { line-height:42px; border-bottom:1px solid #333; }
+      .tb th { background:rgb(179, 167, 150); color:black; }
+      .tb tr:first-child th, .tb tr:first-child td { border-top:1px solid #333; } 
+      .in_data { display:block; line-height:32px; height:32px; margin-left:10px; padding-left:5px; width:800px; }
+      .in_data_area { line-height:1.6; padding:5px; width:800px; height:600px; margin-left:10px; }
+      .btn_wrap { width:220px; margin:20px auto; }
+      .btn_wrap .in_btn { display:block; width:80px; margin:15px; background-color:#333; color:#fff; 
+        text-align:center; border:0; outline:0; float:left; line-height:38px; }
+      .btn_wrap .in_btn:hover { background-color:rgb(228, 208, 119); color:black; }
+      .in_comment { padding-left:18px; }
+      input[readonly] { background:#f1f1f1; }
+      [class*="li_"] { float:left; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hd">
+            <div class="hd_wrap">
+              <a href="index.html" class="logo">
+                <img src="source/logo.png" alt="로고이미지">
+              </a>
+              <div class="search_wrap">
+                <form action="search" method="get">
+                  <div class="search_fr">
+                    <input type="text" id="keyword" name="keyword" placeholder="검색어 입력">
+                    <input type="submit" class="search_btn" value="검색">
+                  </div>
+                </form>
+              </div>
+              <div class="lang_link">
+                <a href="https://www.mofa.go.kr/eng/index.do" class="en_ico">English</a>
+                <a href="login.html" class="login">로그인</a>
+                <a href="join.html" class="join">회원가입</a>
+              </div>
+            </div>
+            <nav class="gnb">
+              <div class="gnb_group nav1">
+                <ul class="l_gnb">
+                  <li class="item1">
+                    <a href="" class="dp1">영사·국가/지역</a>
+                    <ul class="sub">
+                      <li>
+                        <a href="" class="dp2">여행·해외체류정보</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">영사민원24</a></dd>
+                          <dd><a href="" class="dp3">여권</a></dd>
+                          <dd><a href="" class="dp3">여권</a></dd>
+                          <dd><a href="" class="dp3">해외이주</a></dd>
+                          <dd><a href="" class="dp3">해외입국 안내(비자)</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">국가/지역 정보</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">동남아시아</a></dd>
+                          <dd><a href="" class="dp3">북미</a></dd>
+                          <dd><a href="" class="dp3">러시아·중앙아시아</a></dd>
+                          <dd><a href="" class="dp3">중동</a></dd>
+                          <dd><a href="" class="dp3">동북아시아</a></dd>
+                          <dd><a href="" class="dp3">태평양</a></dd>
+                          <dd><a href="" class="dp3">중남미</a></dd>
+                          <dd><a href="" class="dp3">유럽</a></dd>
+                          <dd><a href="" class="dp3">아프리카</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">해외안전여행공지</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">해외안전정보</a></dd>
+                          <dd><a href="" class="dp3">여행경보</a></dd>
+                          <dd><a href="" class="dp3">안전여행서비스</a></dd>
+                          <dd><a href="" class="dp3">미디어센터</a></dd>
+                          <dd><a href="" class="dp3">영사조력 법령 정보</a></dd>
+                        </dl>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="item2">
+                    <a href="" class="dp1">외교정책</a>
+                    <ul class="sub">
+                      <li>
+                        <a href="" class="dp2">조약·국제법</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">조약체결현황</a></dd>
+                          <dd><a href="" class="dp3">조약정보</a></dd>
+                          <dd><a href="" class="dp3">조약개요</a></dd>
+                          <dd><a href="" class="dp3">국제법 소통</a></dd>
+                          <dd><a href="" class="dp3">영토·해양이슈</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">개발협력</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">개발협력</a></dd>
+                          <dd><a href="" class="dp3">국제질병퇴치기금</a></dd>
+                          <dd><a href="" class="dp3">개발협력정책 및 현황</a></dd>
+                          <dd><a href="" class="dp3">ODA 통합 홈페이지</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">국제기구·지역협력체</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="sub.html" class="dp3">UN</a></dd>
+                          <dd><a href="" class="dp3">OECD</a></dd>
+                          <dd><a href="" class="dp3">APEC</a></dd>
+                          <dd><a href="" class="dp3">EU</a></dd>
+                          <dd><a href="" class="dp3">G20</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">안보</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">북한핵문제</a></dd>
+                          <dd><a href="" class="dp3">한반도평화체제</a></dd>
+                          <dd><a href="" class="dp3">군축·비확산</a></dd>
+                          <dd><a href="" class="dp3">글로벌 안보협력</a></dd>
+                          <dd><a href="" class="dp3">동북아 평화협력 플랫폼</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">인권</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">인권외교활동</a></dd>
+                          <dd><a href="" class="dp3">북한인권문제</a></dd>
+                          <dd><a href="" class="dp3">국제인권규범</a></dd>
+                          <dd><a href="" class="dp3">국제인권관련기구</a></dd>
+                          <dd><a href="" class="dp3">인권자료</a></dd>
+                        </dl>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="item3">
+                    <a href="" class="dp1">뉴스·공지</a>
+                    <ul class="sub">
+                      <li>
+                        <a href="" class="dp2">뉴스·공지</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">외교부 브리핑</a></dd>
+                          <dd><a href="" class="dp3">보도자료</a></dd>
+                          <dd><a href="" class="dp3">뉴포커스</a></dd>
+                          <dd><a href="" class="dp3">채용정보</a></dd>
+                          <dd><a href="" class="dp3">공지사항</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">외교일정</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">국제관계주요일정</a></dd>
+                          <dd><a href="" class="dp3">월간외교일지</a></dd>
+                          <dd><a href="" class="dp3">문재인 대통령 정상외교</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">연설·기고·인터뷰</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">연설</a></dd>
+                          <dd><a href="" class="dp3">기고·인터뷰</a></dd>
+                          <dd><a href="" class="dp3">해외언론에 비친 우리 외교</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">외교부소식지</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">뉴스레터</a></dd>
+                          <dd><a href="" class="dp3">정책메일</a></dd>
+                          <dd><a href="" class="dp3">가입신청</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">자료실</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">외교백서</a></dd>
+                          <dd><a href="" class="dp3">한국외교60년</a></dd>
+                          <dd><a href="" class="dp3">외교간행물</a></dd>
+                          <dd><a href="" class="dp3">대한민국외교연표</a></dd>
+                          <dd><a href="" class="dp3">외교문서공개목록</a></dd>
+                        </dl>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="item4">
+                    <a href="" class="dp1">국민참여</a>
+                    <ul class="sub">
+                      <li class="menu_thumb1">
+                        <a href="board.html" class="menu_thumb_link">대화의 장</a>
+                      </li>
+                      <li class="menu_thumb2">
+                        <a href="" class="menu_thumb_link">규제개혁</a>
+                      </li>
+                      <li class="menu_thumb3">
+                        <a href="" class="menu_thumb_link">적극행정</a>
+                      </li>
+                      <li class="menu_thumb4">
+                        <a href="" class="menu_thumb_link">신고센터</a>
+                      </li>
+                      <li class="menu_thumb5">
+                        <a href="" class="menu_thumb_link">민원접수</a>
+                      </li>
+                      <li class="menu_thumb6">
+                        <a href="" class="menu_thumb_link">칭찬합시다</a>
+                      </li>
+                      <li class="menu_thumb7">
+                        <a href="" class="menu_thumb_link">견학·방문</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="gnb_group nav2">
+                <ul class="r_gnb">
+                  <li class="item1">
+                    <a href="" class="dp1">정보공개</a>
+                    <ul class="sub">
+                      <li>
+                        <a href="" class="dp2">정보공개제도</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">제도소개</a></dd>
+                          <dd><a href="" class="dp3">비공개기준</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">사전정보공표</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">사전정보공표목록</a></dd>
+                          <dd><a href="" class="dp3">감사·평가/반부패 및 청렴/계약</a></dd>
+                          <dd><a href="" class="dp3">세입세출예산운용상황</a></dd>
+                          <dd><a href="" class="dp3">업무추진비</a></dd>
+                          <dd><a href="" class="dp3">정책연구</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">국회관련 정책자료</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">예산</a></dd>
+                          <dd><a href="" class="dp3">외교통일위원회</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                      <a href="" class="dp2">정책실명제</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">정책실명제 안내</a></dd>
+                          <dd><a href="" class="dp3">정책실명제대상사업현황</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">법령정보</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">법령</a></dd>
+                          <dd><a href="" class="dp3">행정규칙</a></dd>
+                          <dd><a href="" class="dp3">입법예고</a></dd>
+                          <dd><a href="" class="dp3">국가법령정보센터</a></dd>
+                        </dl>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="item2">
+                    <a href="" class="dp1">외교부 소개</a>
+                    <ul class="sub">
+                      <li>
+                        <a href="" class="dp2">외교부 소개</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">외교부 소개</a></dd>
+                          <dd><a href="" class="dp3">올해의 예산</a></dd>
+                          <dd><a href="" class="dp3">외교정책 목표</a></dd>
+                          <dd><a href="" class="dp3">연도별 업무계획</a></dd>
+                          <dd><a href="" class="dp3">조직도·업무 검색</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">장차관 소개</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">장관소개</a></dd>
+                          <dd><a href="" class="dp3">제1차관인적사항</a></dd>
+                          <dd><a href="" class="dp3">제2차관인적사항</a></dd>
+                          <dd><a href="" class="dp3">역대외교부차관</a></dd>
+                        </dl>
+                      </li>
+                      <li>
+                        <a href="" class="dp2">재외공간</a>
+                        <dl class="dep3">
+                          <dt>상세보기</dt>
+                          <dd><a href="" class="dp3">재외공관설치현황</a></dd>
+                          <dd><a href="" class="dp3">재외공간정보</a></dd>
+                          <dd><a href="" class="dp3">외교관계수립현황</a></dd>
+                          <dd><a href="" class="dp3">주제관제도및선발</a></dd>
+                        </dl>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="item3">
+                    <a href="" class="dp1">오시는 길</a>
+                  </li>
+                  <li class="item4">
+                    <a href="" class="dp1">사이트맵</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </header>
+          <div class="top">
+            <h1 class="top_tit">글쓰기</h1>
+          </div>
+          <form action="EditNoticeCtrl" method="post" id="frm" name="frm" class="frm">
+            <table class="tb">
+                <tbody>
+                    <tr>
+                        <th class="col_hd">
+                            <label for="title" >제목</label>
+                        </th>
+                        <td class="col_data">
+                            <input type="text" id="title" name="title" class="in_data" value=""  required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col_hd">
+                            <label for="content">글 내용</label>
+                        </th>
+                        <td class="col_data">
+                            <textarea id="content" name="content" class="in_data_area"  cols="60" rows="15" required></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="btn_wrap">	
+                <input type="password" id="m_pw" name="m_pw" class="indata" placeholder="비밀번호 입력" required>
+                <button type="reset" class="in_btn" onclick="location.href='board.html'">작성하기</button>
+            </div>	
+          </form>
+          <hr>
+          <footer class="ft">
+            <div class="ft_wrap">
+              <div class="ft_box ft_logo">
+                <nav class="ft_link">
+                  <ul>
+                    <li><a href="">홈페이지 이용안내</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">찾아오시는 길</a></li>
+                    <li><a href="">담당자 연락처</a></li>
+                    <li><a href="">정부기관 바로가기</a></li>
+                  </ul>
+                </nav>
+                <p class="copyright">
+                  주소 : 03172 서울특별시 종로구 사직로8길 60 |(여권영사민원실) 서울특별시 서초구 남부순환로 2558 외교타운 6층<br>
+                  전화번호 : 02.2100.2114(주간), 02.3210.0404(영사콜센터, 24시간)<br>
+                  팩스 : 02.2100.7998<br>
+                  <span>본 홈페이지의 모든 권리는 외교부에 귀속됩니다.</span><br>
+                </p>
+                <ul class="wa_group">
+                  <li class="item1">인적자원개발우수기관</li>
+                  <li class="item2"></li>
+                </ul>
+              </div>
+            </div>
+          </footer>
+    </div>
+</body>
+</html>

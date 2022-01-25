@@ -1,0 +1,7 @@
+@charset "utf-8";
+* { margin: 0; padding: 0; }
+body, html { width: 100%; min-width:1440px; overflow-x:hidden; 
+    font-family: 'Noto Sans KR', "본고딕", sans-serif; } 
+ul { list-style:none; }
+a { text-decoration: none; }
+button, input { background:none; outline:0; border:0; } 

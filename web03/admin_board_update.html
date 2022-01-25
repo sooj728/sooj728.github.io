@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자용 글 수정</title>
+    <!-- 파비콘 설정 -->
+    <link rel="shortcut icon" href="source/img-intro-symbol1-1.ico">
+    <!-- 메타포 설정 -->
+    <meta name="title" content="고양시 관광문화 홈페이지">
+    <meta name="keywords" content="고양시 관광문화, 고양시 여행정보">
+    <meta name="description" content="고양시 관광문화 홈페이지">
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:title" content="고양시 관광문화 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.goyang.go.kr">
+    <meta property="og:description" content="고양시 관광문화">
+    <meta property="og:image" content="img/1.png" />
+    <!-- 폰트 로딩 -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 외부 스타일 연결 -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="slide/slick.css">
+    <link rel="stylesheet" href="slide/slick/slick-theme.css">
+    <script src="slide/slick/slick.js"></script>
+    <style>
+        .content { margin:50px auto 150px; } 
+        .title { text-align:center; line-height:3; padding-top:40px; }
+        .form { text-align:center; }
+        .form div { margin:10px auto; }
+        .btn { margin:50px auto; display:inline; line-height:32px; width:100px; 
+        background-color:#295077; color:#fff; text-align:center; cursor:pointer; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd fix">
+            <div class="hd_wrap">
+                <a href="admin_index.html" class="logo">
+                    <img src="img/img-intro-symbol1-1.png" alt="logo">
+                    <h2 class="logo_tit">관광문화</h2>
+                </a>
+                <nav class="tnb">
+                    <ul>
+                        <ul>
+                            <li>관리자님</li>
+                            <li><a href="admin_mypage.html">마이페이지</a></li>
+                            <li><a href="index.html">로그아웃</a></li>
+                            <li><a href="admin_board_list.html">게시판 관리</a></li>
+                            <li><a href="admin_member_list.html">회원 관리</a></li>
+                        </ul>
+                    </ul>
+                </nav>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="goyang.html" class="dp1">관광명소</a>
+                            <ul class="sub">
+                                <li><a href="goyang.html#page1" class="sub1">고양명소</a></li>
+                                <li><a href="goyang.html#page2" class="sub1">산/사찰</a></li>
+                                <li><a href="goyang.html#page3" class="sub1">공원/자연/기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">축제/문화행사</a>
+                            <ul class="sub">
+                                <li><a href="" class="sub2">최신소식/이벤트</a></li>
+                                <li><a href="" class="sub2">정기축제/행사</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">음식/숙박/쇼핑</a>
+                            <ul class="sub">
+                                <li><a href="" class="sub3">숙박</a></li>
+                                <li><a href="" class="sub3">음식점</a></li>
+                                <li><a href="" class="sub3">쇼핑</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">여행/체험</a>
+                            <ul class="sub">
+                                <li><a href="" class="sub4">체험관광</a></li>
+                                <li><a href="" class="sub4">시티투어</a></li>
+                                <li><a href="" class="sub4">추천코스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">관광안내</a>
+                            <ul class="sub">
+                                <li><a href="" class="sub5">문화관광 웹지도</a></li>
+                                <li><a href="" class="sub5">교통정보</a></li>
+                                <li><a href="" class="sub5">관광지도 다운로드</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">공지사항</a>
+                            <ul class="sub">
+                                <li><a href="admin_board_list.html" class="sub6">공지사항</a></li>
+                                <li><a href="admin_writer_page.html" class="sub6">글쓰기</a></li>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <hr>
+        <div class="content">
+            <h2 class="title">글수정</h2>
+            <form name="updateform" method="POST" action="" class="form">
+                <div>글번호</div>
+                <div><input name="bno" value="1" type="text" readonly="readonly"/></div>
+                <div>작성자</div>
+                <div><input name="writer" value="관리자" type="text" readonly="readonly"/></div>
+                <div>게시글제목 : </div>
+                <div><input name="title" value="테스트" type="text"/></div>
+                <div>게시글내용 : </div>
+                <div><textarea name="content" rows="5" cols="50">테스트입니다</textarea></div>
+                <div>조회수</div>
+                <div><input name="viewcnt" value="5" type="text" readonly="readonly"/></div>
+                <div>작성일자</div>
+                <div>20222-01-12 11:11:11</div>
+                <div>
+                    <input type="button" value="글수정" class="btn" onclick="location.href='admin_board_list.html'"/>
+                    <input type="reset" value="리셋" class="btn"/>
+                </div>
+            </form>
+         </div>
+         <hr>
+         <footer class="ft fix">
+            <div class="ft_wrap">
+                <nav class="linkbar">
+                    <ul>
+                        <li><a href="login.html#page3">개인정보처리방침</a></li>
+                    </ul>
+                </nav>
+                <div class="copyright">
+                    <p class="addr">경기도 고양시 덕양구 고양시청로10 (우) 10460 민원콜센터(시청) 031-909-9000 수화상담(경기도)070-7947-3939</p>
+                    <p class="copy">Copyright 2018 GOYANGCITY. All rights reserved.</p>
+                </div>
+                <div class="wa"><img src="img/wacc-logo.png" alt="WA인증로고"></div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
